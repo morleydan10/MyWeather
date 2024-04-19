@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  const [colorTheme, setColorTheme] = useState('light')
   const [location, setLocation] = useState("")
 
   // get request to weather api
@@ -18,6 +18,8 @@ function App() {
   //   })
   // })
 
+  const toggleTheme = () => console.log("I have been clicked")
+
   return (
     <>
       <Navbar />
@@ -25,8 +27,7 @@ function App() {
       <div className="card">
         <Card location={location}/> 
         <br/>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button className='toggle' onClick={toggleTheme}> toggle
         </button>
       </div>
     </>
