@@ -9,14 +9,14 @@ function App() {
   const [location, setLocation] = useState("")
 
   // get request to weather api
-  useEffect(() => {
-    fetch()
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      setLocation(data);
-    })
-  })
+  // useEffect(() => {
+  //   fetch()
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //     setLocation(data);
+  //   })
+  // })
 
   return (
     <>
@@ -24,6 +24,7 @@ function App() {
       <h1>Welcome to the homepage</h1>
       <div className="card">
         <Card location={location}/> 
+        <br/>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Weather from '../src/assets/weather.svg'
 
 
 
@@ -13,7 +14,8 @@ export default function Navbar (){
 
     return(
         <div className="navbar-div">
-            <p className="title"> My Weather</p>
+            <img className="weather-logo" src={Weather} alt="Weather Logo" />
+            <h1 className="title"> My Weather</h1>
             <input className="searchbar" onChange={handleChange} placeholder="Search your Location"></input>
         </div>
     )

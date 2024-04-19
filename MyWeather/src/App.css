@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+.navbar-div{
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+}
+
+.searchbar{
+  border-radius: var(--border-radius);
+}
