@@ -6,8 +6,6 @@ import Weather from '../src/assets/weather.svg'
 export default function Navbar (){
 
     const handleChange = () => {
-
-        
     }
 
 
