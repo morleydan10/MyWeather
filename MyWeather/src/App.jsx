@@ -27,6 +27,8 @@ function App() {
     fetchData();
   }, [location]);
 
+  // Color scheme/theme logic----------------------------------------------------------
+
   const toggleTheme = (e) => {
     e.preventDefault();
     console.log("theme changed");
@@ -34,18 +36,21 @@ function App() {
     setColorTheme(!colorTheme);
   };
 
-  useEffect(() => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setColorTheme(prefersDarkMode ? 'light' : 'dark');
-  }, []);
+  // useEffect(() => {
+  //   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  //   setColorTheme(prefersDarkMode ? 'light' : 'dark');
+  // }, []);
 
-  const style = {
-    backgroundColor: colorTheme === 'light' ? 'white': '#242424',
-    color: colorTheme === 'light' ? '#213547' : 'rgba(255, 255, 255, 0.87)',
-  };
+  // const style = {
+  //   backgroundColor: colorTheme === 'light' ? 'white': '#242424',
+  //   color: colorTheme === 'light' ? '#213547' : 'rgba(255, 255, 255, 0.87)',
+  // };
+  // -------------------------------------------------------------------------------------
+
 
   return (
-    <div style={style}>
+    // <div style={style}>
+    <div>
       <Navbar />
       <div className="toggle-div">
         <label className='toggle'>
