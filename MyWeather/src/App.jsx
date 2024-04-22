@@ -7,8 +7,32 @@ function App() {
 
   const [colorTheme, setColorTheme] = useState('light');
   const [locationData, setLocationData] = useState(null);
-  const [location, setLocation] = useState("New York");
+  const [location, setLocation] = useState(getCurrentLocation());
 
+
+  function getCurrentLocation() {
+    navigator.geolocation.getCurrentPosition((position) => {
+    const currentLocation = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+    };
+
+    console.log(currentLocation);
+
+    const apiKey = import.meta.env.VITE_GEOCODING_KEY; 
+
+    // fetch for reverse geocoding
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${currentLocation.latitude},${currentLocation.longitude}&key=${apiKey}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      const cityName = data.results[0].address_components[2].long_name
+      setLocation(cityName);
+    })
+  });
+};
+  
+  // Change this to a function getSearchedLocation(){} and pass in input from searchbar (i.e searchedLocation) as an argument
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,12 +53,12 @@ function App() {
 
   // Color scheme/theme logic----------------------------------------------------------
 
-  const toggleTheme = (e) => {
-    e.preventDefault();
-    console.log("theme changed");
-    console.log(colorTheme);
-    setColorTheme(!colorTheme);
-  };
+  // const toggleTheme = (e) => {
+  //   e.preventDefault();
+  //   console.log("theme changed");
+  //   console.log(colorTheme);
+  //   setColorTheme(!colorTheme);
+  // };
 
   // useEffect(() => {
   //   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -52,15 +76,7 @@ function App() {
     // <div style={style}>
     <div>
       <Navbar />
-      <div className="toggle-div">
-        <label className='toggle'>
-          <input 
-            type='checkbox'
-            onChange={toggleTheme}
-          />
-          <span className='slider'></span>
-        </label>
-      </div>
+      <button className='currlocation-button' onClick={getCurrentLocation}>Use Current Location</button>
       <div className="card">
         {locationData && <Card location={locationData} />}
         <br/>

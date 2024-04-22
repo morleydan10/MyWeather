@@ -8,6 +8,8 @@ export default function Navbar (){
     const handleChange = () => {
     }
 
+    // usememoization to search for location from api
+
 
 
     return(
