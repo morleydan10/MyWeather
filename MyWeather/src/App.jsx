@@ -9,6 +9,7 @@ function App() {
   const [locationData, setLocationData] = useState(null);
   const [location, setLocation] = useState(getCurrentLocation());
 
+  const apiKey = import.meta.env.VITE_GEOCODING_KEY; 
 
   function getCurrentLocation() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -19,7 +20,6 @@ function App() {
 
     console.log(currentLocation);
 
-    const apiKey = import.meta.env.VITE_GEOCODING_KEY; 
 
     // fetch for reverse geocoding
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${currentLocation.latitude},${currentLocation.longitude}&key=${apiKey}`)
@@ -75,8 +75,7 @@ function App() {
   return (
     // <div style={style}>
     <div>
-      <Navbar />
-      <button className='currlocation-button' onClick={getCurrentLocation}>Use Current Location</button>
+      <Navbar apiKey={apiKey} />
       <div className="card">
         {locationData && <Card location={locationData} />}
         <br/>
