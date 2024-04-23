@@ -5,7 +5,6 @@ import Navbar from './Navbar'
 
 function App() {
 
-  const [colorTheme, setColorTheme] = useState('light');
   const [locationData, setLocationData] = useState(null);
   const [location, setLocation] = useState(getCurrentLocation());
 
@@ -20,8 +19,7 @@ function App() {
 
     console.log(currentLocation);
 
-
-    // fetch for reverse geocoding
+    // fetch for reverse geocoding from google api
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${currentLocation.latitude},${currentLocation.longitude}&key=${apiKey}`)
     .then((res) => res.json())
     .then((data) => {
@@ -31,7 +29,10 @@ function App() {
     })
   });
 };
-  
+  function getSearchedLocation(searchedLocation){
+    console.log(searchedLocation);
+    setLocation(searchedLocation);
+  };
   // Change this to a function getSearchedLocation(){} and pass in input from searchbar (i.e searchedLocation) as an argument
   useEffect(() => {
     const fetchData = async () => {
@@ -51,31 +52,11 @@ function App() {
     fetchData();
   }, [location]);
 
-  // Color scheme/theme logic----------------------------------------------------------
-
-  // const toggleTheme = (e) => {
-  //   e.preventDefault();
-  //   console.log("theme changed");
-  //   console.log(colorTheme);
-  //   setColorTheme(!colorTheme);
-  // };
-
-  // useEffect(() => {
-  //   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  //   setColorTheme(prefersDarkMode ? 'light' : 'dark');
-  // }, []);
-
-  // const style = {
-  //   backgroundColor: colorTheme === 'light' ? 'white': '#242424',
-  //   color: colorTheme === 'light' ? '#213547' : 'rgba(255, 255, 255, 0.87)',
-  // };
-  // -------------------------------------------------------------------------------------
-
 
   return (
     // <div style={style}>
     <div>
-      <Navbar apiKey={apiKey} />
+      <Navbar apiKey={apiKey} getSearchedLocation={getSearchedLocation} />
       <div className="card">
         {locationData && <Card location={locationData} />}
         <br/>
