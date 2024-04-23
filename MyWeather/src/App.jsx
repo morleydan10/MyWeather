@@ -10,6 +10,8 @@ function App() {
 
   const apiKey = import.meta.env.VITE_GEOCODING_KEY; 
 
+  // Retrieve user's current location --> will be set as the default
+
   function getCurrentLocation() {
     navigator.geolocation.getCurrentPosition((position) => {
     const currentLocation = {
@@ -29,11 +31,14 @@ function App() {
     })
   });
 };
+
+  // Set the query from the searchbar to the location
   function getSearchedLocation(searchedLocation){
     console.log(searchedLocation);
     setLocation(searchedLocation);
   };
-  // Change this to a function getSearchedLocation(){} and pass in input from searchbar (i.e searchedLocation) as an argument
+  
+  
   useEffect(() => {
     const fetchData = async () => {
       try {

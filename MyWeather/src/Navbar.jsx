@@ -33,6 +33,7 @@ export default function Navbar ({ apiKey, getSearchedLocation }){
                 setSearchedLocation(results[0].name);
                 console.log(searchedLocation);
                 getSearchedLocation(searchedLocation);
+                setLocationQuery('');
                 // Handle results
             } else {
                 console.error('Error fetching places:', status);
