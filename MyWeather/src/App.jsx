@@ -12,24 +12,28 @@ function App() {
 
   // Retrieve user's current location --> will be set as the default
 
-  function getCurrentLocation() {
-    navigator.geolocation.getCurrentPosition((position) => {
-    const currentLocation = {
-      latitude: position.coords.latitude,
-      longitude: position.coords.longitude,
-    };
+  async function getCurrentLocation() {
+    return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const currentLocation = {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+            };
 
-    console.log(currentLocation);
+            console.log(currentLocation);
 
-    // fetch for reverse geocoding from google api
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${currentLocation.latitude},${currentLocation.longitude}&key=${apiKey}`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      const cityName = data.results[0].address_components[2].long_name
-      setLocation(cityName);
-    })
-  });
+            // fetch for reverse geocoding from google api
+            fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${currentLocation.latitude},${currentLocation.longitude}&key=${apiKey}`)
+                .then((res) => res.json())
+                .then((data) => {
+                    console.log(data);
+                    const cityName = data.results[0].address_components[2].long_name;
+                    setLocation(cityName);
+                    resolve(cityName); // Resolve the promise with the current location
+                })
+                .catch(reject);
+        }, reject);
+    });
 };
 
   // Set the query from the searchbar to the location
@@ -38,7 +42,7 @@ function App() {
     setLocation(searchedLocation);
   };
   
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {

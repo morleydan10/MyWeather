@@ -5,7 +5,6 @@ export default function Navbar ({ apiKey, getSearchedLocation }){
 
     const [locationQuery, setLocationQuery] = useState('');
     const [placesService, setPlacesService] = useState(null);
-    const [searchedLocation, setSearchedLocation] = useState('');
 
     useEffect(() => {
         // Load Google Maps Places Library
@@ -30,9 +29,8 @@ export default function Navbar ({ apiKey, getSearchedLocation }){
         placesService.findPlaceFromQuery(request, (results, status) => {
             if (status === window.google.maps.places.PlacesServiceStatus.OK) {
                 console.log(results);
-                setSearchedLocation(results[0].name);
-                console.log(searchedLocation);
-                getSearchedLocation(searchedLocation);
+                const newLocation = results[0].name;
+                getSearchedLocation(newLocation);
                 setLocationQuery('');
                 // Handle results
             } else {
