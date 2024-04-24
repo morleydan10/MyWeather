@@ -6,6 +6,7 @@ import Rainy from '../src/assets/rainy-6.svg'
 import LightRain from '../src/assets/rainy-4.svg'
 
 
+
 export default function Card({ location }) {
 
     function currentCondition(){

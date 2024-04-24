@@ -34,14 +34,17 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 15px;
   box-shadow: 0px 0px 4px var(--accent);
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center
-  ;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.weather-card{
+  padding: 10px;
 }
 
 .navbar-div{
@@ -60,4 +63,18 @@
 
 .feels-like{
   color: var(--accent);
+}
+
+#use-current-location{
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.current-location-div{
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  gap: 5px;
+  align-items: center;
+  max-width: fit-content;
 }
