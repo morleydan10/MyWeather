@@ -57,3 +57,7 @@
   padding: 2px;
   border-radius: var(--border-radius);
 }
+
+.feels-like{
+  color: var(--accent);
+}

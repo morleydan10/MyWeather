@@ -35,17 +35,17 @@ export default function Card({ location }) {
     return (
         <div className="weather-card">
             <div className="upper-div">
-                <span>This is the upper div</span>
-                <h3 className="city-name">{location.location.name}, {location.location.region}</h3>
-                <h3 className="country">{location.location.country}</h3>
+                <h2 className="city-name">{location.location.name}, {location.location.region}</h2>
+                {/* <h3 className="country">{location.location.country}</h3> */}
             </div>
+                <h1 className='temperature'>{location.current.temp_f}°F/{location.current.temp_c}°C</h1>
+                <h3 className='feels-like'>Feels like: {location.current.feelslike_f}°F/{location.current.feelslike_c}°C</h3>
             <div className="lower-div">
-                <span>This is the lower div</span>
-                <h2 className='temperature'>{location.current.temp_f}°F/{location.current.temp_c}°C</h2>
                 <img 
                     src={currentCondition()}
                     // src={location.current.condition.icon} 
-                    alt='Weather Icon'/>
+                    alt='Weather Icon'
+                />
             </div>
         </div>
     )

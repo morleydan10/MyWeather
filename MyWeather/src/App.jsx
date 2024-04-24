@@ -66,6 +66,8 @@ function App() {
     // <div style={style}>
     <div>
       <Navbar apiKey={apiKey} getSearchedLocation={getSearchedLocation} />
+      <br/>
+      <br/>
       <div className="card">
         {locationData && <Card location={locationData} />}
         <br/>
