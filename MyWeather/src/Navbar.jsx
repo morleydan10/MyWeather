@@ -17,6 +17,8 @@ export default function Navbar ({ apiKey, getSearchedLocation }){
         document.body.appendChild(script);
     }, [apiKey]);
 
+    
+
     function searchLocation(e) {
         e.preventDefault();
         if (!placesService) return; // Wait for Places Service to be initialized
@@ -37,7 +39,7 @@ export default function Navbar ({ apiKey, getSearchedLocation }){
                 console.error('Error fetching places:', status);
             }
         });
-    }
+    };
 
     return(
         <div className="navbar-div">
