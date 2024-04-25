@@ -9,10 +9,11 @@ function App() {
   const [locationData, setLocationData] = useState(null);
   const [location, setLocation] = useState(null);
   const [hasSearched, setHasSearched] = useState(false)
+  const [isCelcius, setIsCelcius] = useState(false);
 
   const apiKey = import.meta.env.VITE_GEOCODING_KEY; 
 
-  // Retrieve user's current location --> will be set as the default
+  // Retrieves user's current location 
 
   function getCurrentLocation() {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -32,28 +33,26 @@ function App() {
           })
       };
 
+      // Sets location state as current location on initial page load
       useEffect(() =>{
         getCurrentLocation();
       }, []);
 
-  // Set the query from the searchbar to the location
+  // Sets the query from the searchbar to the location state
   function getSearchedLocation(searchedLocation){
       console.log(searchedLocation);
       setLocation(searchedLocation);
       setHasSearched(true);
   };
-
   
-
-  
-  // Sets the location to the current location 
+  // Sets the location state to the current location 
   const handleClick= (e) => {
     console.log("I was clicked");
     getCurrentLocation();
     setHasSearched(false);
   }
   
-  // function fetchLocation(){
+  // Fetch to weather api to retrieve current weather conditions
     useEffect(() => {
     const fetchData = async () => {
       try {
@@ -70,27 +69,28 @@ function App() {
     };
     fetchData();
     }, [location, hasSearched]);
-  // }
 
-  // useEffect(() => {
-  //   {hasSearched}
-    
-  // }, [location]);
+    const toggleCelcius = (e) => setIsCelcius(!isCelcius)
+
 
 
   return (
-    // <div style={style}>
     <div>
       <Navbar apiKey={apiKey} getSearchedLocation={getSearchedLocation} />
       <br/>
       <br/>
       <div className="card">
-        <div className="current-location-div">
-          <img src={Compass} alt="Compass icon"/>
-          <a id="use-current-location" onClick={handleClick}>Use Current Location</a>
+        <div className='card-header'>
+          <div className="current-location-div">
+            <img src={Compass} alt="Compass icon"/>
+            <a id="use-current-location" onClick={handleClick}>Use Current Location</a>
+          </div>
+          <div className='toggle-div'>
+            <a id='celcius-toggle' onClick={toggleCelcius}>C°</a>
+          </div>
         </div>
-        {locationData && <Card location={locationData} />}
-        <br/>
+          {locationData && <Card location={locationData} isCelcius={isCelcius} />}
+          <br/>
       </div>
     </div>
   );
