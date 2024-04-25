@@ -11,10 +11,11 @@ export default function Card({ location }) {
 
     function currentCondition(){
         const condition = location.current.condition.text.toLowerCase();
+        const apiIcon = location.current.condition.icon
 
         // Types of conditions
         const partlyCloudy = condition.includes('partly') && condition.includes('cloudy')
-        const cloudy = condition.includes('cloudy')
+        const cloudy = condition.includes('cloudy') || condition.includes('overcast')
         const sunny = condition.includes('sunny') || condition.includes('clear')
         const rainy = condition.includes('moderate') || condition.includes('heavy') && condition.includes('rain')
         const lightRain = condition.includes('light') && condition.includes('rain') || condition.includes('drizzle')
@@ -30,13 +31,19 @@ export default function Card({ location }) {
             return Rainy;
         } else if (lightRain){
             return LightRain;
-        }
+        } else return apiIcon
     }
 
     return (
         <div className="weather-card">
             <div className="upper-div">
-                <h2 className="city-name">{location.location.name}, {location.location.region}</h2>
+                <h2 className="city-name">{location.location.name},
+                    {location.location.country.includes("United States")?
+                    (location.location.region
+                    ):(
+                    location.location.country
+                    )}
+                </h2>
                 {/* <h3 className="country">{location.location.country}</h3> */}
             </div>
                 <h1 className='temperature'>{location.current.temp_f}°F/{location.current.temp_c}°C</h1>
