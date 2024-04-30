@@ -79,6 +79,10 @@ function Card({ location, isCelcius }) {
                     width="120px"
                     height="120px"
                 />
+                <h1 className='temperature'>{!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h1>
+                <h3 className='feels-like'>Feels like: {!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h3>
+            <div className="lower-div">
+                <h3 className="condition-text">{location.current.condition.text}</h3>
                 <div className="other-conditions-div">
                     <div className="wind-div">
                         <img src={WeatherVane} alt="Weather Vane" height="20px" width="20px"/>
@@ -90,12 +94,12 @@ function Card({ location, isCelcius }) {
                         <h2 className="other-conditions-text">{location.current.humidity}%</h2>
                         <p className="other-conditions-text">Humidity</p>
                     </div>
+                    <div className="uv-div">
+                        {/* <img src={WeatherVane} alt="Weather Vane" height="20px" width="20px"/> */}
+                        <h2 className="other-conditions-text">{location.current.uv}</h2>
+                        <p className="other-conditions-text">UV Index</p>
+                    </div>
                 </div>
-                <h1 className='temperature'>{!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h1>
-                <h3 className='feels-like'>Feels like: {!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h3>
-                
-            <div className="lower-div">
-                <h3 className="condition-text">{location.current.condition.text}</h3>
             </div>
         </div>
     )
