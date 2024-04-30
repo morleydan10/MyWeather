@@ -11,7 +11,8 @@ function App() {
   const [hasSearched, setHasSearched] = useState(false)
   const [isCelcius, setIsCelcius] = useState(false);
 
-  const apiKey = import.meta.env.VITE_GEOCODING_KEY; 
+  const apiKey = import.meta.env.VITE_GEOCODING_KEY;
+  const weatherApiKey = import.meta.env.VITE_WEATHER_KEY
 
   // Retrieves user's current location 
 
@@ -56,7 +57,7 @@ function App() {
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_WEATHER_KEY}&q=${location}&aqi=no`);
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${location}&aqi=no`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -76,7 +77,7 @@ function App() {
 
   return (
     <div>
-      <Navbar apiKey={apiKey} getSearchedLocation={getSearchedLocation} />
+      <Navbar weatherApiKey={weatherApiKey} getSearchedLocation={getSearchedLocation} />
       <br/>
       <br/>
       <div className="card">
