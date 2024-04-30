@@ -11,6 +11,7 @@ import Snowy from '../src/assets/snowy-6.svg'
 import LightSnow from '../src/assets/snowy-4.svg'
 import PatchySnow from '../src/assets/snowy-3.svg'
 import PatchyLightSnow from '../src/assets/snowy-2.svg'
+import WeatherVane from '../src/assets/weather_sagittarius.svg'
 
 
 
@@ -78,6 +79,18 @@ function Card({ location, isCelcius }) {
                     width="120px"
                     height="120px"
                 />
+                <div className="other-conditions-div">
+                    <div className="wind-div">
+                        <img src={WeatherVane} alt="Weather Vane" height="20px" width="20px"/>
+                        <p className="other-conditions-text">{!isCelcius? (location.current.wind_mph + " mph") : (location.current.wind_kph + " kph")}</p>
+                        <p className="other-conditions-text">{location.current.wind_dir}</p>
+                    </div>
+                    <div className="humidity-div">
+                        {/* <img src={WeatherVane} alt="Weather Vane" height="20px" width="20px"/> */}
+                        <h2 className="other-conditions-text">{location.current.humidity}%</h2>
+                        <p className="other-conditions-text">Humidity</p>
+                    </div>
+                </div>
                 <h1 className='temperature'>{!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h1>
                 <h3 className='feels-like'>Feels like: {!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h3>
                 

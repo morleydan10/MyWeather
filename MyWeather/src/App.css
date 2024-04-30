@@ -62,3 +62,14 @@
   align-items: baseline;
   justify-content: space-between;
 }
+
+.other-conditions-div{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.other-conditions-text{
+  margin: 2px;
+}
