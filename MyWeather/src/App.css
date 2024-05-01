@@ -73,3 +73,33 @@
 .other-conditions-text{
   margin: 2px;
 }
+
+/* SEARCH BAR */
+
+.search-results-list{
+  width: 100%;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 8px var(--accent);
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  align-items: flex-start;
+}
+
+.result{
+  padding: 2px;
+  cursor:pointer;
+  width:100%;
+  justify-content: start;
+}
+
+.result:hover{
+  background-color: rgba(15, 121, 214, 0.934);
+  color: white;
+}
+
