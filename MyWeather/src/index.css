@@ -6,7 +6,7 @@
   --accent: rgba(93, 233, 198, 0.946);
   --accent-hover: rgba(79, 199, 169, 0.946);
 
-  color-scheme: light dark;
+  color-scheme: dark light;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
@@ -60,7 +60,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
+    color: #2b235a;
     background-color: #ffffff;
   }
   a:hover {

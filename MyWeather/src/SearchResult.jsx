@@ -1,10 +1,10 @@
 import React from "react";
 
-function SearchResult({ result, getSearchedLocation }){
+function SearchResult({ result, getSearchedLocation, setInput }){
 
     const handleClickResult = (id) => {
             getSearchedLocation("id:" + id);
-            console.log("searching ...");
+            setInput('');
     };
 
     return(
@@ -13,8 +13,10 @@ function SearchResult({ result, getSearchedLocation }){
             onClick={ () => handleClickResult(result.id)}
             value={result.id}
         >
-            {/* Shortens the result if the location is within the United States */}
-            {result.name + ", " + result.region + ", " + (result.country.toLowerCase().includes("united states of america") ? "USA" : result.country)}
+            {/* Shortens the result if the location is within the United States or the UK */}
+            {result.name + ", " + result.region + ", " + 
+            (result.country.toLowerCase().includes("united states of america") ? "USA" : 
+            result.country.toLowerCase().includes("united kingdom") ? "UK" : result.country)}
         </div>
     )
 }

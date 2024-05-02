@@ -27,7 +27,7 @@ export default function Navbar ({ weatherApiKey, getSearchedLocation }){
     return(
         <div className="navbar-div">
             <img className="weather-logo" src={Weather} alt="Weather Logo" />
-            <h1 className="title">My Weather</h1>
+            <h1 className="title">MyWeather</h1>
             <div className="search-div">
                 <input 
                     className="searchbar" 
@@ -35,7 +35,7 @@ export default function Navbar ({ weatherApiKey, getSearchedLocation }){
                     onChange={(e) => handleChange(e.target.value)}
                     placeholder="Search Location" 
                 />
-                {results && results.length > 0 && <SearchResultsList results={results} getSearchedLocation={getSearchedLocation} />}
+                {results && results.length > 0 && input && <SearchResultsList results={results} getSearchedLocation={getSearchedLocation} setInput={setInput} />}
             </div>
 
 
