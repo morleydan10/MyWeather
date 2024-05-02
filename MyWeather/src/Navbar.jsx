@@ -1,60 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Weather from '../src/assets/weather.svg'
+import SearchResultsList from "./SearchResultsList";
 
-export default function Navbar ({ apiKey, getSearchedLocation }){
+export default function Navbar ({ weatherApiKey, getSearchedLocation }){
 
-    const [locationQuery, setLocationQuery] = useState('');
-    const [placesService, setPlacesService] = useState(null);
+    const [input, setInput] = useState("");
+    // const [selectedLocation, setSelectedLocation]= useState(null);
+    const [results, setResults] = useState("");
 
-    useEffect(() => {
-        // Load Google Maps Places Library
-        const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-        script.onload = () => {
-            // Initialize Places Service
-            setPlacesService(new window.google.maps.places.PlacesService(document.createElement('div')));
-        };
-        document.body.appendChild(script);
-    }, [apiKey]);
+    function searchLocation(inputValue) {
+        // e.preventDefault();
+        fetch(`http://api.weatherapi.com/v1/search.json?key=${weatherApiKey}&q=${inputValue}`)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            setResults(data);
+        })
+        }
 
-    
+    function handleChange(inputValue){
+        setInput(inputValue);
+        searchLocation(inputValue);
 
-    function searchLocation(e) {
-        e.preventDefault();
-        if (!placesService) return; // Wait for Places Service to be initialized
-
-        const request = {
-            query: locationQuery,
-            fields: ['formatted_address', 'name', 'rating', 'opening_hours', 'geometry']
-        };
-
-        placesService.findPlaceFromQuery(request, (results, status) => {
-            if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-                console.log(results);
-                const newLocation = results[0].name;
-                getSearchedLocation(newLocation);
-                setLocationQuery('');
-                // Handle results
-            } else {
-                console.error('Error fetching places:', status);
-            }
-        });
-    };
+    }
 
     return(
         <div className="navbar-div">
             <img className="weather-logo" src={Weather} alt="Weather Logo" />
-            <h1 className="title">My Weather</h1>
-            <input 
-                className="searchbar" 
-                value={locationQuery} 
-                onChange={(e) => setLocationQuery(e.target.value)} 
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        searchLocation(e);
-                    }
-                }}
-                placeholder="Search Location" />
+            <h1 className="title">MyWeather</h1>
+            <div className="search-div">
+                <input 
+                    className="searchbar" 
+                    value={input} 
+                    onChange={(e) => handleChange(e.target.value)}
+                    placeholder="Search Location" 
+                />
+                {results && results.length > 0 && input && <SearchResultsList results={results} getSearchedLocation={getSearchedLocation} setInput={setInput} />}
+            </div>
+
+
         </div>
     )
 }
