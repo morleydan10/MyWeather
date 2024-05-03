@@ -10,6 +10,7 @@ function App() {
   const [location, setLocation] = useState(null);
   const [hasSearched, setHasSearched] = useState(false)
   const [isCelcius, setIsCelcius] = useState(false);
+  const [day, setDay] = useState(true);
 
   const apiKey = import.meta.env.VITE_GEOCODING_KEY;
   const weatherApiKey = import.meta.env.VITE_WEATHER_KEY
@@ -72,8 +73,6 @@ function App() {
     }, [location, hasSearched]);
 
     const toggleCelcius = (e) => setIsCelcius(!isCelcius)
-
-
 
   return (
     <div>

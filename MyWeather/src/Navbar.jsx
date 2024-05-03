@@ -21,7 +21,6 @@ export default function Navbar ({ weatherApiKey, getSearchedLocation }){
     function handleChange(inputValue){
         setInput(inputValue);
         searchLocation(inputValue);
-
     }
 
     return(

@@ -2,16 +2,16 @@ import React from "react";
 
 function SearchResult({ result, getSearchedLocation, setInput }){
 
-    const handleClickResult = (id) => {
-            getSearchedLocation("id:" + id);
-            setInput('');
+    const handleClickResult = (e) => {
+        console.log("I was clicked...");
+        getSearchedLocation("id:" + result.id);
+        setInput('');
     };
 
     return(
         <div 
             className="result"
-            onClick={ () => handleClickResult(result.id)}
-            value={result.id}
+            onClick={handleClickResult}
         >
             {/* Shortens the result if the location is within the United States or the UK */}
             {result.name + ", " + result.region + ", " + 
