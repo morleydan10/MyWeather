@@ -67,7 +67,6 @@
 /* Card */
 
 .card {
-  padding: 15px;
   box-shadow: 0px 0px 4px var(--accent);
   border-radius: var(--border-radius);
   display: flex;
@@ -75,7 +74,18 @@
 }
 
 .weather-card{
-  padding: 10px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.upper-div {
+  text-align: center;
+  margin: auto;
+}
+
+.inner-card{
+  width: 100%;
 }
 
 .feels-like{
@@ -101,21 +111,54 @@
 }
 
 .card-header{
+  padding: 15px;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
 }
 
-.other-conditions-div{
-  padding: 20px;
+.humidity{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.transparent-div {
+  position: absolute;
+  display:inherit;
+  pointer-events: none;
+}
+
+.other-conditions-div {
+  position: absolute;
+  top: 100;
+  right: 100; 
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
 }
 
 .other-conditions-text{
   margin: 2px;
+}
+
+.temperature-container{
+  align-self: center;
+  padding: 20px;
+  justify-self: center;
+  text-align: center;
+  margin: auto;
+  position: relative;
+}
+
+.card-center-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 /* Day and night card styles */

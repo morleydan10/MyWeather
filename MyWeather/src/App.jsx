@@ -94,17 +94,17 @@ function App() {
       <br/>
       <br/>
       <div className="card" style={day? daytime: night}>
-        <div className='card-header'>
-          <div className="current-location-div">
-            <img src={Compass} alt="Compass icon"/>
-            <a id="use-current-location" onClick={handleClick}>Use Current Location</a>
+          <div className='card-header'>
+            <div className="current-location-div">
+              <img src={Compass} alt="Compass icon"/>
+              <a id="use-current-location" onClick={handleClick}>Use Current Location</a>
+            </div>
+            <div className='toggle-div'>
+              <a id='celcius-toggle' onClick={toggleCelcius}>C°</a>
+            </div>
           </div>
-          <div className='toggle-div'>
-            <a id='celcius-toggle' onClick={toggleCelcius}>C°</a>
-          </div>
-        </div>
-          {locationData && <Card location={locationData} isCelcius={isCelcius} day={day} />}
-          <br/>
+            {locationData && <Card location={locationData} isCelcius={isCelcius} day={day} />}
+            <br/>
       </div>
     </div>
   );
