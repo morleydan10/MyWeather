@@ -78,8 +78,9 @@ function App() {
 
     // Day and Night styles
     const daytime = {
-      backgroundColor: 'rgb(179,205,224)',
+      backgroundColor: 'rgb(105, 154, 188)',
       color: 'rgb(1,31,75)',
+      boxShadow: '0px 0px 4px var(--accent)'
     };
 
     const night = {

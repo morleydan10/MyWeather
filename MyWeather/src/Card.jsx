@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Import SVG Assests/Icons
-import Sunny from '../src/assets/sunny.svg'
+import Sunny from '../src/assets/clear-day.svg'
 import Cloudy from '../src/assets/cloudy.svg'
-import PartlyCloudy from '../src/assets/cloudy-day-3.svg'
-import Rainy from '../src/assets/rainy-6.svg'
-import LightRain from '../src/assets/rainy-4.svg'
-import Thunder from '../src/assets/thunder.svg'
-import Snowy from '../src/assets/snowy-6.svg'
-import LightSnow from '../src/assets/snowy-4.svg'
-import PatchySnow from '../src/assets/snowy-3.svg'
-import PatchyLightSnow from '../src/assets/snowy-2.svg'
+import Overcast from '../src/assets/overcast.svg'
+import PartlyCloudy from '../src/assets/partly-cloudy-day.svg'
+import Rainy from '../src/assets/rain.svg'
+import LightRain from '../src/assets/drizzle.svg'
+import Thunder from '../src/assets/thunderstorms-day-rain.svg'
+import Snowy from '../src/assets/snow.svg'
+import LightSnow from '../src/assets/snow.svg'
+import PatchySnow from '../src/assets/partly-cloudy-day-snow.svg'
+import PatchyLightSnow from '../src/assets/partly-cloudy-day-snow.svg'
 import WeatherVane from '../src/assets/weather_sagittarius.svg'
-
+import ClearNight from '../src/assets/clear-night.svg'
+import Fog from '../src/assets/fog.svg'
+import Mist from '../src/assets/mist.svg'
+import Haze from '../src/assets/haze-day.svg'
 
 
 function Card({ location, isCelcius, day }) {
@@ -27,8 +31,9 @@ function Card({ location, isCelcius, day }) {
 
         // Types of conditions from weather API
         const partlyCloudy = condition.includes('partly') && condition.includes('cloudy')
-        const cloudy = condition.includes('cloudy') || condition.includes('overcast')
-        const sunny = condition.includes('sunny') || condition.includes('clear')
+        const cloudy = condition.includes('cloudy')
+        const overcast = condition.includes('overcast')
+        const sunny =  condition.includes('sunny') || condition.includes('clear')
         const rainy = condition.includes('moderate') || condition.includes('heavy') && condition.includes('rain')
         const lightRain = condition.includes('light') && condition.includes('rain') || condition.includes('drizzle')
         const snowy = condition.includes('snow') && condition.includes('heavy') || condition.includes('moderate')
@@ -36,32 +41,55 @@ function Card({ location, isCelcius, day }) {
         const patchySnow = condition.includes('snow') && condition.includes('heavy') || condition.includes('moderate') && condition.includes('patchy')
         const patchyLightSnow = condition.includes('snow') && condition.includes('light') || condition.includes('partly') && condition.includes('patchy')
         const thunder = condition.includes('thunder')
+        const foggy = condition.includes('fog')
+        const misty = condition.includes('mist')
+        const hazy = condition.includes('haze') || condition.includes('hazy')
 
         // Night conditions
-        
+        const clearNight = condition.includes('clear')
 
         // Conditional rendering of weather icons
-        if (partlyCloudy){
-            return PartlyCloudy;
-        } else if (cloudy){
-            return Cloudy;
-        } else if (sunny){
-            return Sunny;
-        } else if (rainy){
-            return Rainy;
-        } else if (lightRain){
-            return LightRain;
-        } else if (thunder) {
-            return Thunder;
-        } else if (lightSnow) {
-            return LightSnow;
-        } else if (snowy) {
-            return Snowy;
-        } else if (patchySnow) {
-            return PatchySnow;
-        } else if (patchyLightSnow) {
-            return PatchyLightSnow;
-        }else return apiIcon
+        if (day) {
+            // Daytime Icons
+            if (partlyCloudy) {
+                return PartlyCloudy;
+            } else if (cloudy) {
+                return Cloudy;
+            } else if (overcast) {
+                return Overcast;
+            } else if (sunny) {
+                return Sunny;
+            } else if (rainy) {
+                return Rainy;
+            } else if (lightRain) {
+                return LightRain;
+            } else if (thunder) {
+                return Thunder;
+            } else if (lightSnow) {
+                return LightSnow;
+            } else if (snowy) {
+                return Snowy;
+            } else if (patchySnow) {
+                return PatchySnow;
+            } else if (patchyLightSnow) {
+                return PatchyLightSnow;    
+            } else if (foggy) {
+                return Fog;
+            } else if (misty) {
+                return Mist;
+            } else if (hazy) {
+                return Haze;
+            } else {
+                return apiIcon;
+            }
+        } else {
+            // Nighttime icons
+            if (clearNight) {
+                return ClearNight;
+            } else {
+                return apiIcon;
+            }
+        }
     }
 
     return (

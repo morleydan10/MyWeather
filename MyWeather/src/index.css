@@ -5,6 +5,7 @@
   font-weight: 200;
   --border-radius: 5px;
   --accent: rgba(255, 255, 255, 0.87);
+  --night-accent: rgb(1, 31, 75)
   /* --accent: rgba(93, 233, 198, 0.946); */
   /* --accent-hover: rgba(79, 199, 169, 0.946); */
 
