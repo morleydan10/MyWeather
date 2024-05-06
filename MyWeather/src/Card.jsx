@@ -15,7 +15,7 @@ import WeatherVane from '../src/assets/weather_sagittarius.svg'
 
 
 
-function Card({ location, isCelcius }) {
+function Card({ location, isCelcius, day }) {
 
     
 
@@ -36,6 +36,9 @@ function Card({ location, isCelcius }) {
         const patchySnow = condition.includes('snow') && condition.includes('heavy') || condition.includes('moderate') && condition.includes('patchy')
         const patchyLightSnow = condition.includes('snow') && condition.includes('light') || condition.includes('partly') && condition.includes('patchy')
         const thunder = condition.includes('thunder')
+
+        // Night conditions
+        
 
         // Conditional rendering of weather icons
         if (partlyCloudy){
@@ -90,12 +93,10 @@ function Card({ location, isCelcius }) {
                         <p className="other-conditions-text">{location.current.wind_dir}</p>
                     </div>
                     <div className="humidity-div">
-                        {/* <img src={WeatherVane} alt="Weather Vane" height="20px" width="20px"/> */}
                         <h2 className="other-conditions-text">{location.current.humidity}%</h2>
                         <p className="other-conditions-text">Humidity</p>
                     </div>
                     <div className="uv-div">
-                        {/* <img src={WeatherVane} alt="Weather Vane" height="20px" width="20px"/> */}
                         <h2 className="other-conditions-text">{location.current.uv}</h2>
                         <p className="other-conditions-text">UV Index</p>
                     </div>

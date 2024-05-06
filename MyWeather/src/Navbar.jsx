@@ -5,11 +5,10 @@ import SearchResultsList from "./SearchResultsList";
 export default function Navbar ({ weatherApiKey, getSearchedLocation }){
 
     const [input, setInput] = useState("");
-    // const [selectedLocation, setSelectedLocation]= useState(null);
     const [results, setResults] = useState("");
 
+    // Handles searchbar input
     function searchLocation(inputValue) {
-        // e.preventDefault();
         fetch(`http://api.weatherapi.com/v1/search.json?key=${weatherApiKey}&q=${inputValue}`)
         .then((res) => res.json())
         .then((data) => {

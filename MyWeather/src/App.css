@@ -118,4 +118,14 @@
   margin: 2px;
 }
 
+/* Day and night card styles */
 
+.daytime {
+  background-color: rgba(179, 205, 224);
+  color: rgb(1, 31, 75);
+}
+
+.night {
+  background-color: rgb(42, 77, 105);
+  color: rgba(255, 255, 255, 0.87);
+}
