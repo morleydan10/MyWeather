@@ -178,7 +178,7 @@
 /* Day and night card styles */
 
 .daytime {
-  background-color: rgb(105, 154, 188);
+  background-color: rgb(61, 135, 187);
   color: var(--night-accent);
   box-shadow: 0px 0px 4px var(--accent);
 }
