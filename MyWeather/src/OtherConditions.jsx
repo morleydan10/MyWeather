@@ -1,6 +1,7 @@
 import React from "react";
 import UVIcon from "./UVIcon";
 
+// Icon Imports
 import WeatherVane from '../src/assets/weather_sagittarius.svg';
 import NA from '../src/assets/weather_sagittarius.svg';
 
@@ -70,13 +71,10 @@ function OtherConditions ({ location, isCelcius }){
         }
     }
     
-    console.log(rotateWeatherVane())
-    
     return (
         <div className="transparent-div">
             <div className="other-conditions-div">
                 <div className="wind-div">
-                    {/* <img src={WeatherVane ? WeatherVane : NA} alt="Weather Vane" height="20px" width="20px" /> */}
                     <img src={WeatherVane ? WeatherVane : NA} alt="Weather Vane" height="20px" width="20px" style={rotateWeatherVane()}/>
                     <p className="other-conditions-text">{!isCelcius? (location.current.wind_mph + " mph") : (location.current.wind_kph + " kph")}</p>
                     <p className="other-conditions-text">{location.current.wind_dir}</p>
