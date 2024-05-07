@@ -1,14 +1,17 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family:Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 200;
   --border-radius: 5px;
-  --accent: rgba(93, 233, 198, 0.946);
-  --accent-hover: rgba(79, 199, 169, 0.946);
+  --accent: rgba(255, 255, 255, 0.87);
+  --night-accent: rgb(1, 31, 75)
+  /* --accent: rgba(93, 233, 198, 0.946); */
+  /* --accent-hover: rgba(79, 199, 169, 0.946); */
 
   color-scheme: dark light;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: 	#544863;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

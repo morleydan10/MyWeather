@@ -12,11 +12,11 @@ function App() {
   const [isCelcius, setIsCelcius] = useState(false);
   const [day, setDay] = useState(true);
 
+  // APIs
   const apiKey = import.meta.env.VITE_GEOCODING_KEY;
   const weatherApiKey = import.meta.env.VITE_WEATHER_KEY
 
   // Retrieves user's current location 
-
   function getCurrentLocation() {
       navigator.geolocation.getCurrentPosition((position) => {
           const currentLocation = {
@@ -65,6 +65,7 @@ function App() {
         const data = await response.json();
         console.log(data);
         setLocationData(data);
+        {data.current.is_day === 1 ? setDay(true) : setDay(false)}
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -72,25 +73,38 @@ function App() {
     fetchData();
     }, [location, hasSearched]);
 
+    // Toggle between celcius and fahrenheit
     const toggleCelcius = (e) => setIsCelcius(!isCelcius)
+
+    // Day and Night styles
+    const daytime = {
+      backgroundColor: 'rgb(61, 135, 187)',
+      color: 'rgb(1,31,75)',
+      boxShadow: '0px 0px 4px var(--accent)'
+    };
+
+    const night = {
+      backgroundColor: 'rgb(42,77,105)',
+      color: 'rgba(255, 255, 255, 0.87)',
+    };
 
   return (
     <div>
       <Navbar weatherApiKey={weatherApiKey} getSearchedLocation={getSearchedLocation} />
       <br/>
       <br/>
-      <div className="card">
-        <div className='card-header'>
-          <div className="current-location-div">
-            <img src={Compass} alt="Compass icon"/>
-            <a id="use-current-location" onClick={handleClick}>Use Current Location</a>
+      <div className="card" style={day? daytime: night}>
+          <div className='card-header'>
+            <div className="current-location-div">
+              <img src={Compass} alt="Compass icon"/>
+              <a id="use-current-location" onClick={handleClick}>Use Current Location</a>
+            </div>
+            <div className='toggle-div'>
+              <a id='celcius-toggle' onClick={toggleCelcius}>C°</a>
+            </div>
           </div>
-          <div className='toggle-div'>
-            <a id='celcius-toggle' onClick={toggleCelcius}>C°</a>
-          </div>
-        </div>
-          {locationData && <Card location={locationData} isCelcius={isCelcius} />}
-          <br/>
+            {locationData && <Card location={locationData} isCelcius={isCelcius} day={day} />}
+            <br/>
       </div>
     </div>
   );
