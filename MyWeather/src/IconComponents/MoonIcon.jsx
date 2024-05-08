@@ -1,14 +1,14 @@
 import React from "react";
 
 // Icon Imports
-import FullMoon from '../src/assets/moon-full.svg';
-import FirstQuarter from '../src/assets/moon-first-quarter.svg';
-import LastQuarter from '../src/assets/moon-last-quarter.svg';
-import NewMoon from '../src/assets/moon-new.svg';
-import WaningCrescent from '../src/assets/moon-waning-crescent.svg';
-import WaningGibbous from '../src/assets/moon-waning-gibbous.svg';
-import WaxingCrescent from '../src/assets/moon-waxing-crescent.svg';
-import WaxingGibbous from '../src/assets/moon-waxing-gibbous.svg';
+import FullMoon from '../assets/moon-full.svg';
+import FirstQuarter from '../assets/moon-first-quarter.svg';
+import LastQuarter from '../assets/moon-last-quarter.svg';
+import NewMoon from '../assets/moon-new.svg';
+import WaningCrescent from '../assets/moon-waning-crescent.svg';
+import WaningGibbous from '../assets/moon-waning-gibbous.svg';
+import WaxingCrescent from '../assets/moon-waxing-crescent.svg';
+import WaxingGibbous from '../assets/moon-waxing-gibbous.svg';
 
 function MoonIcon ({ moonphase }) {
 

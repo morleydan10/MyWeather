@@ -1,5 +1,5 @@
 import React from "react";
-import MoonIcon from "./MoonIcon";
+import MoonIcon from "../src/IconComponents/MoonIcon";
 
 // Icon Imports
 import Sunrise from '../src/assets/sunrise.svg';
