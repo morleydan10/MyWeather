@@ -28,9 +28,6 @@ import SnowyNight from '../assets/snow.svg';
 import LightSnowyNight from '../assets/partly-cloudy-night-snow.svg';
 import ThunderNight from '../assets/thunderstorms-night-rain.svg';
 
-
-
-
 function CurrentConditionIcon({ location, day }) {
 
     function currentCondition(){
