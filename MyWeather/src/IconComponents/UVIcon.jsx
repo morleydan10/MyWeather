@@ -1,17 +1,17 @@
 import React from "react";
 
 // Import UV icons
-import UV1 from '../src/assets/uv-index-1.svg'
-import UV2 from '../src/assets/uv-index-2.svg'
-import UV3 from '../src/assets/uv-index-3.svg'
-import UV4 from '../src/assets/uv-index-4.svg'
-import UV5 from '../src/assets/uv-index-5.svg'
-import UV6 from '../src/assets/uv-index-6.svg'
-import UV7 from '../src/assets/uv-index-7.svg'
-import UV8 from '../src/assets/uv-index-8.svg'
-import UV9 from '../src/assets/uv-index-9.svg'
-import UV10 from '../src/assets/uv-index-10.svg'
-import UV11 from '../src/assets/uv-index-11.svg'
+import UV1 from '../assets/uv-index-1.svg'
+import UV2 from '../assets/uv-index-2.svg'
+import UV3 from '../assets/uv-index-3.svg'
+import UV4 from '../assets/uv-index-4.svg'
+import UV5 from '../assets/uv-index-5.svg'
+import UV6 from '../assets/uv-index-6.svg'
+import UV7 from '../assets/uv-index-7.svg'
+import UV8 from '../assets/uv-index-8.svg'
+import UV9 from '../assets/uv-index-9.svg'
+import UV10 from '../assets/uv-index-10.svg'
+import UV11 from '../assets/uv-index-11.svg'
 
 function UVIcon ({ UV }){
 

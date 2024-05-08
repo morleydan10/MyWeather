@@ -1,9 +1,9 @@
 import React from "react";
-import UVIcon from "./UVIcon";
+import UVIcon from "../src/IconComponents/UVIcon";
 
 // Icon Imports
 import WeatherVane from '../src/assets/weather_sagittarius.svg';
-import NA from '../src/assets/weather_sagittarius.svg';
+import NA from '../src/assets/not-available.svg';
 
 function OtherConditions ({ location, isCelcius }){
 

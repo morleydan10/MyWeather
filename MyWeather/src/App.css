@@ -129,26 +129,72 @@
   align-items: baseline;
 }
 
+.info-div{
+  display: inline-flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+}
+
 .transparent-div {
-  position: absolute;
+  position: flex;
   display:inherit;
   pointer-events: none;
+  top: 100;
+  right: 100;
+  width: 100%;
 }
 
 .other-conditions-div {
   margin: 1.5px;
-  position: absolute;
+  position: flex;
   top: 100;
   right: 100; 
-  padding: 10px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 15px;
+  justify-content: space-evenly;
   font-size: 15px;
   font-weight: 200;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  max-width: 85px;
+  /* border: 1px solid rgba(255,255,255,0.18); */
+  /* background-color: rgba(255, 255, 255, 0.076); */
+  /* background: linear-gradient(20deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); */
+  /* backdrop-filter: blur(4.9px); */
+  /* -webkit-backdrop-filter: blur(4.9px); */
+}
+
+.card-center-div{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.transparent-div-2 {
+  display:flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  top: 100;
+  left: 100;
+  width: 100%;
+}
+
+.other-conditions-div-2 {
+  margin: 1.5px;
+  position: flex;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 15px;
+  font-weight: 200;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  max-width: 85px;
   /* border: 1px solid rgba(255,255,255,0.18); */
   /* background-color: rgba(255, 255, 255, 0.076); */
   /* background: linear-gradient(20deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); */
@@ -160,6 +206,11 @@
   margin: 2px;
 }
 
+#moonphase-text{
+  /* max-width: min-content; */
+  text-wrap: wrap;
+}
+
 .temperature-container{
   align-self: center;
   padding: 20px;
@@ -167,13 +218,13 @@
   text-align: center;
   margin: auto;
   position: relative;
+  width: fit-content;
+  text-wrap: nowrap;
 }
 
-.card-center-div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
+/* .temperature {
+  font-size: 45px;
+} */
 
 /* Day and night card styles */
 
