@@ -40,7 +40,7 @@ function Card({ location, isCelcius, day }) {
         const condition = location.current.condition.text.toLowerCase();
         const apiIcon = location.current.condition.icon
 
-        // Types of conditions from weather API
+        // Day Conditions
         const partlyCloudy = condition.includes('partly') && condition.includes('cloudy')
         const cloudy = condition.includes('cloudy')
         const overcast = condition.includes('overcast')
@@ -121,6 +121,8 @@ function Card({ location, isCelcius, day }) {
                 return LightSnowyNight;
             } else if (thunderstormsNight) {
                 return ThunderNight;
+            } else if (misty) {
+                return Mist;
             } else {
                 return apiIcon;
             }
