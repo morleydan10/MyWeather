@@ -27,7 +27,7 @@ function SunAndMoonSidebar ({ location, isCelcius }){
                 </div>
                 <div className="moonphase-div">
                     <MoonIcon location={location} moonphase={moonphase} />
-                    <p className="other-conditions-text">{moonphase}</p>
+                    <p id="moonphase-text" className="other-conditions-text">{moonphase}</p>
                 </div>
             </div>
         </div>
