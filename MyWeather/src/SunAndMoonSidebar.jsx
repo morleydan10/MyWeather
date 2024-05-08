@@ -1,4 +1,5 @@
 import React from "react";
+import MoonIcon from "./MoonIcon";
 
 // Icon Imports
 import Sunrise from '../src/assets/sunrise.svg';
@@ -15,16 +16,17 @@ function SunAndMoonSidebar ({ location, isCelcius }){
         <div className="transparent-div-2">
             <div className="other-conditions-div-2">
                 <div className="sunrise-div">
-                    <img src={Sunrise} alt="Sunrise" height="20px" width="20px"/>
+                    <img src={Sunrise} alt="Sunrise" height="64px" width="64px"/>
                     <p className="other-conditions-text">{sunrise}</p>
                     <p className="other-conditions-text">Sunrise</p>
                 </div>
                 <div className="sunset-div">
-                    <img src={Sunset} alt="Sunset" height="20px" width="20px"/>
+                    <img src={Sunset} alt="Sunset" height="64px" width="64px"/>
                     <p className="other-conditions-text">{sunset}</p>
                     <p className="other-conditions-text">Sunset</p>
                 </div>
                 <div className="moonphase-div">
+                    <MoonIcon location={location} moonphase={moonphase} />
                     <p className="other-conditions-text">{moonphase}</p>
                 </div>
             </div>

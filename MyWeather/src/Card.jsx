@@ -1,5 +1,8 @@
 import React from "react";
+
+// Import Other Components
 import OtherConditions from "./OtherConditions";
+import SunAndMoonSidebar from "./SunAndMoonSidebar";
 
 
 // Import SVG Assests/Icons (Daytime)
@@ -25,10 +28,10 @@ import FoggyNight from '../src/assets/fog-night.svg'
 import OvercastNight from '../src/assets/overcast-night.svg'
 import PartlyCloudyNight from '../src/assets/partly-cloudy-night.svg'
 import LightRainyNight from '../src/assets/partly-cloudy-night-drizzle.svg'
+import PatchyRainNight from '../src/assets/partly-cloudy-night-rain.svg'
 import SnowyNight from '../src/assets/snow.svg'
 import LightSnowyNight from '../src/assets/partly-cloudy-night-snow.svg'
 import ThunderNight from '../src/assets/thunderstorms-night-rain.svg'
-import SunAndMoonSidebar from "./SunAndMoonSidebar";
 
 
 function Card({ location, isCelcius, day }) {
@@ -64,6 +67,7 @@ function Card({ location, isCelcius, day }) {
         const overcastNight = condition.includes('overcast')
         const partlyCloudyNight = condition.includes('partly') && condition.includes('cloudy')
         const lightRainyNight = condition.includes('light') && condition.includes('rain') || condition.includes('drizzle')
+        const patchyRainNight = condition.includes('patchy') || condition.includes('partly') && condition.includes('rain') || condition.includes('drizzle')
         const snowyNight = condition.includes('snow') && condition.includes('heavy') || condition.includes('moderate')
         const lightSnowyNight = condition.includes('snow') && condition.includes('light') || condition.includes('partly')
         const thunderstormsNight = condition.includes('thunder')
@@ -120,6 +124,8 @@ function Card({ location, isCelcius, day }) {
                 return SnowyNight;
             } else if (lightSnowyNight) {
                 return LightSnowyNight;
+            } else if (patchyRainNight) {
+                return PatchyRainNight;
             } else if (thunderstormsNight) {
                 return ThunderNight;
             } else if (misty) {

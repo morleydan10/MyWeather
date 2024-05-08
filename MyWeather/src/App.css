@@ -168,7 +168,6 @@
 .card-center-div{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -212,7 +211,13 @@
   text-align: center;
   margin: auto;
   position: relative;
+  width: fit-content;
+  text-wrap: nowrap;
 }
+
+/* .temperature {
+  font-size: 45px;
+} */
 
 /* Day and night card styles */
 
