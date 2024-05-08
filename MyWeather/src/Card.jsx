@@ -28,6 +28,7 @@ import LightRainyNight from '../src/assets/partly-cloudy-night-drizzle.svg'
 import SnowyNight from '../src/assets/snow.svg'
 import LightSnowyNight from '../src/assets/partly-cloudy-night-snow.svg'
 import ThunderNight from '../src/assets/thunderstorms-night-rain.svg'
+import SunAndMoonSidebar from "./SunAndMoonSidebar";
 
 
 function Card({ location, isCelcius, day }) {
@@ -156,6 +157,7 @@ function Card({ location, isCelcius, day }) {
                             <h3 className="condition-text">{location.current.condition.text}</h3>
                         </div>
                     </div>
+                    <SunAndMoonSidebar location={location} isCelcius={isCelcius} />
                 </div>
         </div>
     )
