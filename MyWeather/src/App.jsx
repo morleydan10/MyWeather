@@ -7,7 +7,7 @@ import Compass from '../src/assets/location-current.svg'
 function App() {
 
   const [locationData, setLocationData] = useState(null);
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState('');
   const [hasSearched, setHasSearched] = useState(false)
   const [isCelcius, setIsCelcius] = useState(false);
   const [day, setDay] = useState(true);
@@ -58,7 +58,7 @@ function App() {
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${location}&aqi=no`);
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${location}&days=1&aqi=no&alerts=no`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
