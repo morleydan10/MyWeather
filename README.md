@@ -9,7 +9,7 @@ MyWeather is a simple application that provides users with weather information b
 - Support for both daytime and nighttime weather icons
 
 ## Technologies Used
-- HTML/CSS/JavaScript for frontend development
+- HTML/CSS/React(JavaScript) for frontend development
 - [WeatherAPI](https://www.weatherapi.com/) for weather data
 - [Google Maps API](https://developers.google.com/maps) for reverse geocoding
 - [Meteocons](https://bas.dev/work/meteocons) for SVG weather icons
