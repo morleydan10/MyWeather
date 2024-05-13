@@ -10,14 +10,6 @@ import Next from '../src/assets/chevron_right.svg';
 
 function Carousel({ location, isCelcius }) {
 
-    // const settings = {
-    //     dots: false,
-    //     infinite: false,
-    //     centerMode: true,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    // }
-
     return (
         <div className="slider">
             <div className="back-div">

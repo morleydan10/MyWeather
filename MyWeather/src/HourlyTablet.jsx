@@ -1,11 +1,11 @@
 import React from "react";
 
-function HourlyTablet ({ hour, isCelcius }){
+function HourlyTablet ({ hour, isCelcius, showHourlyForecast }){
 
     // API has date before the hour. This variable returns just the hour
     const hourPart = hour.time.substring(11, 16);
 
-    console.log(isCelcius);
+    // console.log(isCelcius);
 
     // API uses 24 hour time table.  This converts 24 hour to 12 hour for users in the United States.
     const USTimeTable = {
