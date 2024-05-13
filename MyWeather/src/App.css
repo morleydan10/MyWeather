@@ -40,7 +40,6 @@
   /* background-color: white; */
   color: white;
   font-size: 12px;
-  /* box-shadow: 0px 0px 8px var(--accent); */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   border-radius: var(--border-radius);
   background-color: rgba(255, 255, 255, 0.076);
@@ -257,7 +256,6 @@
   width: 100%;
   max-width: 600px; /* Limit the maximum width for larger screens */
   height: 150px;
-  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: inline-flex;
@@ -265,12 +263,21 @@
 }
 
 .back-div{
-  width: 15%;
-
+  width:5%;
 }
 
 .forward-div{
-  width: 15%;
+  width:5%;
+}
+
+.prev-button{
+  height:100%;
+  width:100%;
+}
+
+.next-button{
+  height:100%;
+  width: 100%;
 }
 
 
