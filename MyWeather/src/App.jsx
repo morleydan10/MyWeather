@@ -104,7 +104,6 @@ function App() {
             </div>
           </div>
             {locationData && <Card location={locationData} isCelcius={isCelcius} day={day} />}
-            <br/>
       </div>
     </div>
   );

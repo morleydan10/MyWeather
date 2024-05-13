@@ -4,6 +4,7 @@ import React from "react";
 import CurrentConditionIcon from "./IconComponents/CurrentConditionIcon";
 import OtherConditions from "./OtherConditions";
 import SunAndMoonSidebar from "./SunAndMoonSidebar";
+import Carousel from "./Carousel";
 
 function Card({ location, isCelcius, day }) {
 
@@ -32,6 +33,7 @@ function Card({ location, isCelcius, day }) {
                     </div>
                     <SunAndMoonSidebar location={location} isCelcius={isCelcius} />
                 </div>
+                <Carousel location={location} isCelcius/>
         </div>
     )
 }
