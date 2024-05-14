@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "react-slick";
 
 // Components
 import TabletList from "./TabletList";
@@ -12,16 +11,18 @@ function Carousel({ location, isCelcius }) {
 
     return (
         <div className="slider">
-            <div className="back-div">
-                <button className="prev-button">
-                    <img src={Prev} />
-                </button>
-            </div>
             <TabletList location={location} isCelcius={isCelcius} />
-            <div className="forward-div">
-                <button className="next-button">
-                    <img src={Next} />
-                </button>
+            <div className="slider-buttons">
+                <div className="back-div">
+                    <button className="prev-button">
+                        <img src={Prev} />
+                    </button>
+                </div>
+                <div className="forward-div">
+                    <button className="next-button" >
+                        <img src={Next} />
+                    </button>
+                </div>
             </div>
         </div>
     )

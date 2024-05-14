@@ -15,22 +15,29 @@ function TabletList ({ location, isCelcius }){
             key={i}
             hour={hour}
             isCelcius={isCelcius}
-            showHourlyForecast={showHourlyForecast}
+            location ={location}
             />
         ))
         
-        function showHourlyForecast() {
-            const forecast = hourlyTablets.filter(hourlyTablet => {
-                const hour = hourlyTablet.props.hour.substring(11, 16);
-                return hour >= localTime;
-            });
-    
-            return future;
-        }
+    // Array that show the number up to five hours 
+    // const hoursView = []
+        
+    // function showHourlyForecast() {
+    //     const forecast = hourlyTablets.filter(hourlyTablet => {
+    //         const hour = hourlyTablet.props.hour.time.substring(11,16);
+    //         return hour > localTime;
+    //     });
+
+    //     console.log(forecast);
+    //     hoursView.push(...forecast.slice(0, 5));
+    //     console.log(hoursView);
+    //     return hoursView;
+    // }
+
     
     return(
         <div className="tablet-container">
-            {showHourlyForecast()}
+            {hourlyTablets}
         </div>
     )
 

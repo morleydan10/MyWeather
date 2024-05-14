@@ -1,6 +1,6 @@
 import React from "react";
 
-function HourlyTablet ({ hour, isCelcius, showHourlyForecast }){
+function HourlyTablet ({ hour, isCelcius }){
 
     // API has date before the hour. This variable returns just the hour
     const hourPart = hour.time.substring(11, 16);
@@ -35,6 +35,7 @@ function HourlyTablet ({ hour, isCelcius, showHourlyForecast }){
         '23:00': '11 PM'
     };
 
+    // Renders 12-Hour Time
     function renderTime () {
         return USTimeTable[hourPart]
     }
@@ -43,6 +44,7 @@ function HourlyTablet ({ hour, isCelcius, showHourlyForecast }){
     return(
         <div className="hour-tablet">
             <p>{isCelcius? renderTime() : hourPart }</p>
+            <p>{hour.condition.text}</p>
         </div>
     )
 }

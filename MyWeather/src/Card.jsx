@@ -26,7 +26,7 @@ function Card({ location, isCelcius, day }) {
                     <div className="card-center-div">
                         <div className="temperature-container">
                             <CurrentConditionIcon location={location} day={day} />
-                            <h1 className='temperature'>{!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h1>
+                            <h1 className='temperature'>{!isCelcius ? (location.current.temp_f + " °F"):(location.current.temp_c + "°C")}</h1>
                             <h3 className='feels-like'>Feels like: {!isCelcius ? (location.current.feelslike_f + " °F"):(location.current.feelslike_c + "°C")}</h3>
                             <h3 className="condition-text">{location.current.condition.text}</h3>
                         </div>
