@@ -7,12 +7,12 @@ import TabletList from "./TabletList";
 import Prev from '../src/assets/chevron_left.svg';
 import Next from '../src/assets/chevron_right.svg';
 
-function Carousel({ location, isCelcius }) {
+function Carousel({ location, isCelcius, USTimeTable }) {
 
 
     return (
         <div className="slider">
-            <TabletList location={location} isCelcius={isCelcius}  />
+            <TabletList location={location} isCelcius={isCelcius} USTimeTable={USTimeTable}  />
         </div>
     )
 }

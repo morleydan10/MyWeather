@@ -2,7 +2,7 @@ import React from "react";
 
 import HourlyTablet from "./HourlyTablet";
 
-function TabletList ({ location, isCelcius }){
+function TabletList ({ location, isCelcius, USTimeTable }){
 
     const hours = location.forecast.forecastday[0].hour
     
@@ -13,6 +13,7 @@ function TabletList ({ location, isCelcius }){
             hour={hour}
             isCelcius={isCelcius}
             location ={location}
+            USTimeTable={USTimeTable}
             />
         ))
 
