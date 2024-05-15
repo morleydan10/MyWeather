@@ -66,7 +66,7 @@ function ForecastConditionIcon({ hour }) {
         const rainyNight = condition.includes('moderate') || condition.includes('heavy') && condition.includes('rain')
         const snowyNight = condition.includes('snow') && condition.includes('heavy') || condition.includes('moderate')
         const lightSnowyNight = condition.includes('snow') && condition.includes('light') || condition.includes('partly')
-        const thunderstormsNight = condition.includes('thunder')
+        const thunderstormsNight = condition.includes('moderate') || condition.includes('heavy') && condition.includes('rain') && condition.includes('thunder')
 
         // Conditional rendering of weather icons
         if (day) {

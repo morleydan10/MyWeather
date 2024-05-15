@@ -56,13 +56,14 @@ function CurrentConditionIcon({ location, day }) {
         // Night conditions
         const clearNight = condition.includes('clear')
         const foggyNight = condition.includes('fog')
-        const overcastNight = condition.includes('overcast')
+        const overcastNight = condition.includes('overcast') || condition.includes('cloudy')
         const partlyCloudyNight = condition.includes('partly') && condition.includes('cloudy')
         const lightRainyNight = condition.includes('light') && condition.includes('rain') || condition.includes('drizzle')
         const patchyRainNight = condition.includes('patchy') || condition.includes('partly') && condition.includes('rain') || condition.includes('drizzle')
+        const rainyNight = condition.includes('moderate') || condition.includes('heavy') && condition.includes('rain')
         const snowyNight = condition.includes('snow') && condition.includes('heavy') || condition.includes('moderate')
         const lightSnowyNight = condition.includes('snow') && condition.includes('light') || condition.includes('partly')
-        const thunderstormsNight = condition.includes('thunder')
+        const thunderstormsNight = condition.includes('moderate') || condition.includes('heavy') && condition.includes('rain') && condition.includes('thunder')
 
         // Conditional rendering of weather icons
         if (day) {
@@ -112,7 +113,9 @@ function CurrentConditionIcon({ location, day }) {
                 return PartlyCloudyNight;
             } else if (lightRainyNight) {
                 return LightRainyNight;
-            } else if (snowyNight) {
+            } else if (rainyNight) {
+                return Rainy;
+            }else if (snowyNight) {
                 return SnowyNight;
             } else if (lightSnowyNight) {
                 return LightSnowyNight;
