@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Components
 import TabletList from "./TabletList";
@@ -9,19 +9,10 @@ import Next from '../src/assets/chevron_right.svg';
 
 function Carousel({ location, isCelcius }) {
 
+
     return (
         <div className="slider">
-                <div className="back-div">
-                    <button className="prev-button">
-                        <img src={Prev} />
-                    </button>
-                </div>
-            <TabletList location={location} isCelcius={isCelcius} />
-                <div className="forward-div">
-                    <button className="next-button" >
-                        <img src={Next} />
-                    </button>
-                </div>
+            <TabletList location={location} isCelcius={isCelcius}  />
         </div>
     )
 }

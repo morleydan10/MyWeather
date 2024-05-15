@@ -8,6 +8,7 @@ import Carousel from "./Carousel";
 
 function Card({ location, isCelcius, day }) {
 
+    // const localTime = location.location.localtime.substring(11, 16);
 
     return (
         <div className="weather-card">
