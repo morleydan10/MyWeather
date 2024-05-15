@@ -33,7 +33,7 @@ function Card({ location, isCelcius, day }) {
                     </div>
                     <SunAndMoonSidebar location={location} isCelcius={isCelcius} />
                 </div>
-                <Carousel location={location} isCelcius/>
+                <Carousel location={location} isCelcius={isCelcius}/>
         </div>
     )
 }
