@@ -17,15 +17,21 @@ MyWeather is a simple application that provides users with weather information b
 ## Installation
 1. Clone the repository to your local machine:
 
+```bash
 git clone https://github.com/morleydan10/MyWeather.git
+```
 
 2. Navigate to the project directory:
 
+```bash
 cd MyWeather
+```
 
 3. Run the server in your terminal:
 
+```bash
 npm run dev
+```
 
 ## Usage
 - Upon opening the app, users will be prompted to allow access to their location.
