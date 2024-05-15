@@ -22,7 +22,7 @@ function MoonIcon ({ moonphase }) {
     const waxingCrescent = moonphase.toLowerCase().includes('waxing') && moonphase.toLowerCase().includes('crescent')
     const waxingGibbous = moonphase.toLowerCase().includes('waxing') && moonphase.toLowerCase().includes('gibbous')
 
-
+    // Moonphase Icons
     function renderMoonIcon(){
         if (fullMoon){
             return FullMoon;

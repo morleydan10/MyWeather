@@ -32,8 +32,8 @@ function SunAndMoonSidebar ({ location, isCelcius}){
     function adjustTime(time) {
         const hour = time.substring(0, 2); // Extract the first two characters representing the hour
         const newHour = twentyFourHour[hour]; // Convert to 24-hour format
-        const adjustedTime = newHour + time.substring(2, 5);
-        return adjustedTime; // Concatenate the new hour with the rest of the time string
+        const adjustedTime = newHour + time.substring(2, 5); // Return String without PM
+        return adjustedTime; 
     }
 
     // Determine if it's afternoon or evening (PM)
@@ -42,7 +42,7 @@ function SunAndMoonSidebar ({ location, isCelcius}){
     // Adjust sunrise
     const adjustedSunrise = sunrise.substring(0,5);
 
-    // Adjust sunset time 
+    // Adjust sunset 
     const adjustedSunset = isAfternoonEvening ? adjustTime(sunset) : sunset;
 
     return (

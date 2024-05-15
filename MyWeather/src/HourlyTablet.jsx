@@ -1,5 +1,6 @@
 import React from "react";
 
+// Component Imports
 import ForecastConditionIcon from "./IconComponents/ForecastConditionIcon";
 
 function HourlyTablet ({ hour, isCelcius, USTimeTable }){
@@ -7,7 +8,6 @@ function HourlyTablet ({ hour, isCelcius, USTimeTable }){
     // API has date before the hour. This variable returns just the hour
     const hourPart = hour.time.substring(11, 16);
 
-    // console.log(hour);
 
     // Renders 12-Hour Time
     function renderTime () {
