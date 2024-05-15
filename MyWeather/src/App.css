@@ -225,14 +225,14 @@
 /* CAROUSEL */
 
 .hour-tablet {
-  padding: 2px;
+  padding: 20px;
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius);
   box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.15); /* Adjusted box-shadow */
   border: solid 2px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  width: fit-content;
+  width: 50px;
   transition: .5s;
   height:75%;
 }
@@ -246,7 +246,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   overflow-x: auto;
   gap: 10px;
   width: 100%;
@@ -255,21 +255,14 @@
   scroll-snap-type: x mandatory; 
 }
 
-.slider-buttons {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%; /* Adjust button width as needed */
-}
-
 .slider {
+  padding: 10px 0 10px 0;
   position: relative;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   max-width: 600px; /* Limit the maximum width for larger screens */
-  height: 150px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  height: 200px;
   overflow: hidden;
 }
 
@@ -287,15 +280,25 @@
 }
 
 .back-div{
-  display: flex;
-  align-items: center;
   justify-content: flex-start;
+
 }
 .forward-div {
-  display: flex;
-  align-items: center;
   justify-content: flex-end;
 }
+
+.back-div,
+.forward-div{
+  display: flex;
+  align-items: center;
+  opacity: 0;
+}
+
+.back-div:hover,
+.forward-div:hover{
+  opacity: 1;
+}
+
 
 .prev-button img,
 .next-button img {
