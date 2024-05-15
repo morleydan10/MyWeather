@@ -1,13 +1,18 @@
 import React, { useState } from "react";
+
+// Icon imports
 import Weather from '../src/assets/weather.svg'
+
+// Component imports
 import SearchResultsList from "./SearchResultsList";
 
-export default function Navbar ({ weatherApiKey, getSearchedLocation }){
+function Navbar ({ weatherApiKey, getSearchedLocation }){
 
+    // State Variables
     const [input, setInput] = useState("");
     const [results, setResults] = useState("");
 
-    // Handles searchbar input
+    // Handles fetch from searchbar input
     function searchLocation(inputValue) {
         fetch(`http://api.weatherapi.com/v1/search.json?key=${weatherApiKey}&q=${inputValue}`)
         .then((res) => res.json())
@@ -16,7 +21,8 @@ export default function Navbar ({ weatherApiKey, getSearchedLocation }){
             setResults(data);
         })
         }
-
+    
+    // Handles change in searchbar input 
     function handleChange(inputValue){
         setInput(inputValue);
         searchLocation(inputValue);
@@ -40,3 +46,5 @@ export default function Navbar ({ weatherApiKey, getSearchedLocation }){
         </div>
     )
 }
+
+export default Navbar;

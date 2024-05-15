@@ -1,18 +1,25 @@
 import { useState, useEffect } from 'react'
+
+// CSS import
 import './App.css'
+
+// Component Imports
 import Card from './Card'
 import Navbar from './Navbar'
+
+// Icon Imports
 import Compass from '../src/assets/location-current.svg'
 
 function App() {
 
+  // State Variables
   const [locationData, setLocationData] = useState(null);
   const [location, setLocation] = useState('');
   const [hasSearched, setHasSearched] = useState(false)
   const [isCelcius, setIsCelcius] = useState(false);
   const [day, setDay] = useState(true);
 
-  // APIs
+  // API keys
   const apiKey = import.meta.env.VITE_GEOCODING_KEY;
   const weatherApiKey = import.meta.env.VITE_WEATHER_KEY
 
@@ -35,10 +42,10 @@ function App() {
           })
       };
 
-      // Sets location state as current location on initial page load
-      useEffect(() =>{
-        getCurrentLocation();
-      }, []);
+  // Sets location state as current location on initial page load
+  useEffect(() =>{
+    getCurrentLocation();
+  }, []);
 
   // Sets the query from the searchbar to the location state
   function getSearchedLocation(searchedLocation){
@@ -104,7 +111,6 @@ function App() {
             </div>
           </div>
             {locationData && <Card location={locationData} isCelcius={isCelcius} day={day} />}
-            <br/>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ function SearchResult({ result, getSearchedLocation, setInput }){
 
     // Handles when user selects location from the dropdown
     const handleClickResult = (e) => {
-        console.log("I was clicked...");
+        // console.log("I was clicked...");
         getSearchedLocation("id:" + result.id);
         setInput('');
     };

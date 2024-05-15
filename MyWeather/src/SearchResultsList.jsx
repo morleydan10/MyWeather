@@ -1,4 +1,6 @@
 import React from "react";
+
+// Component Imports
 import SearchResult from "./SearchResult";
 
 function SearchResultsList({ results, getSearchedLocation, setInput }){
