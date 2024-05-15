@@ -23,7 +23,9 @@ git clone https://github.com/morleydan10/MyWeather.git
 
 cd MyWeather
 
-3. Open the `index.html` file in your web browser to view the app.
+3. Run the server in your terminal:
+
+npm run dev
 
 ## Usage
 - Upon opening the app, users will be prompted to allow access to their location.
@@ -34,8 +36,8 @@ cd MyWeather
 - Users have the ability to toggle between Fahrenheit and Celcius
 
 ## Future Plans
-- Add hourly forecast for the day
 - Add 5 day forecast for locations
+- Adjust styling for hourly forecast
 - Give users the ability to change the language of the application
 
 ## Credits
