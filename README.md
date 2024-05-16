@@ -7,6 +7,7 @@ MyWeather is a simple application that provides users with weather information b
 - Current weather information display
 - Dynamic weather icons based on weather conditions
 - Support for both daytime and nighttime weather icons
+- Seacrhbar to look up conditions around the globe
 
 ## Technologies Used
 - HTML/CSS/React(JavaScript) for frontend development
