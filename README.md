@@ -3,7 +3,7 @@
 ## Overview
 MyWeather is a simple application that provides users with weather information based on either their current location or any location they search. It displays current weather conditions, temperature, and other relevant data, along with icons representing different weather conditions.
 
-<img src='MyWeather/src/assets/MyWeather Home Snap.png' height="62.5vh" width="60vw"/>
+<img src='MyWeather/src/assets/MyWeather Home Snap.png' height="620.5vh" width="600vw"/>
 
 ## Features
 - Current weather information display
