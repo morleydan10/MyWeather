@@ -5,6 +5,11 @@ MyWeather is a simple application that provides users with weather information b
 
 <img src='MyWeather/src/assets/MyWeather Home Snap.png' height="500px" width="600px"/>
 
+<video width="700" height="500" controls>
+  <source src="MyWeather/src/assets/MyWeather_Home_Gif.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Features
 - Current weather information display
 - Dynamic weather icons based on weather conditions
