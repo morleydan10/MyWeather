@@ -7,6 +7,7 @@ MyWeather is a simple application that provides users with weather information b
 - Current weather information display
 - Dynamic weather icons based on weather conditions
 - Support for both daytime and nighttime weather icons
+- Seacrhbar to look up conditions around the globe
 
 ## Technologies Used
 - HTML/CSS/React(JavaScript) for frontend development
@@ -17,13 +18,21 @@ MyWeather is a simple application that provides users with weather information b
 ## Installation
 1. Clone the repository to your local machine:
 
+```bash
 git clone https://github.com/morleydan10/MyWeather.git
+```
 
 2. Navigate to the project directory:
 
+```bash
 cd MyWeather
+```
 
-3. Open the `index.html` file in your web browser to view the app.
+3. Run the server in your terminal:
+
+```bash
+npm run dev
+```
 
 ## Usage
 - Upon opening the app, users will be prompted to allow access to their location.
@@ -34,8 +43,8 @@ cd MyWeather
 - Users have the ability to toggle between Fahrenheit and Celcius
 
 ## Future Plans
-- Add hourly forecast for the day
 - Add 5 day forecast for locations
+- Adjust styling for hourly forecast
 - Give users the ability to change the language of the application
 
 ## Credits
