@@ -5,8 +5,6 @@ MyWeather is a simple application that provides users with weather information b
 
 <img src='MyWeather/src/assets/MyWeather Home Snap.png' height="500px" width="600px"/>
 
-/home/morleydan10/Development/code/post-Flatiron/React-projects/react-weather-app/MyWeather/src/assets/MyWeather_Home_Gif.mp4
-
 ## Features
 - Current weather information display
 - Dynamic weather icons based on weather conditions
