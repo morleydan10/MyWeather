@@ -4,10 +4,9 @@
 MyWeather is a simple application that provides users with weather information based on either their current location or any location they search. It displays current weather conditions, temperature, and other relevant data, along with icons representing different weather conditions.
 
 
-<video width="320" height="240" controls>
-  <source src="https://drive.google.com/file/d/1uOQNmxuQ_NSEfh45PtFskXXOgrtp2Xbp/view?usp=sharing" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<img width="320" height="240">
+  <source src="https://drive.google.com/file/d/1uOQNmxuQ_NSEfh45PtFskXXOgrtp2Xbp/view?usp=sharing" type="image/png">.
+</img>
 
 ## Features
 - Current weather information display
