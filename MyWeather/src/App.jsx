@@ -9,6 +9,7 @@ import Navbar from './Navbar'
 
 // Icon Imports
 import Compass from '../src/assets/location-current.svg'
+import ForecastBar from './ForecastBar'
 
 function App() {
 
@@ -65,7 +66,7 @@ function App() {
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${location}&days=1&aqi=no&alerts=no`);
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${location}&days=3&aqi=no&alerts=no`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -112,6 +113,7 @@ function App() {
           </div>
             {locationData && <Card location={locationData} isCelcius={isCelcius} day={day} />}
       </div>
+      <ForecastBar location={location} isCelcius={isCelcius} />
     </div>
   );
 }
